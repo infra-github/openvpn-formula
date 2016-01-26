@@ -317,7 +317,7 @@ tls-auth {{ config.tls_auth }}
 client-cert-not-required
 {%- endif %}
 
-{%- if config.username-as-common-name is defined %}
+{%- if config.username_as_common_name is defined %}
 # Use the username entered as credentials as the common-name. 
 # this common-name is also used for client-profiles
 ;;username-as-common-name

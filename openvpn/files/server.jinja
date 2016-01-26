@@ -83,7 +83,7 @@ dev {{ config.dev }}
 {%- else %}
 dev tun
 {%- endif %}
-{%- if config.tun-ipv6 is defined %}
+{%- if config.tun_ipv6 is defined and config.tun_ipv6 == True%}
 tun-ipv6
 {%- endif %}
 
@@ -151,8 +151,8 @@ dh dh1024.pem
 {%- if config.server is defined %}
 server {{ config.server }}
 {%- endif %}
-{%- if config.server-ipv6 is defined %}
-server-ipv6 {{ config.server-ipv6 }}
+{%- if config.server_ipv6 is defined %}
+server-ipv6 {{ config.server_ipv6 }}
 {%- endif %}
 
 {%- if config.ifconfig_pool is defined %}
@@ -313,7 +313,7 @@ tls-auth {{ config.tls_auth }}
 #specify if a client certificate is required, use only in combination 
 #with Username/password instead of certificate based authentication
 # client-cert-not-required
-{%- if config.client-cert-not-required is defined %}
+{%- if config.client_cert_not_required is defined and config.client_cert_not_required == True %}
 client-cert-not-required
 {%- endif %}
 
@@ -455,6 +455,6 @@ tun-mtu {{ config.tun_mtu }}
 {%- endif %}
 
 #revocation list
-{%- if config.crl-verify is defined %}
-crl-verify {{ config.crl-verify }}
+{%- if config.crl_verify is defined %}
+crl-verify {{ config.crl_verify }}
 {%- endif %}

@@ -362,14 +362,10 @@ max-clients {{ config.max_clients }}
 # non-Windows systems.
 {%- if config.user is defined %}
 user {{ config.user }}
-{%- else %}
-user {{ user }}
 {%- endif %}
 
 {%- if config.group is defined %}
 group {{ config.group }}
-{%- else %}
-group {{ group }}
 {%- endif %}
 
 # The persist options will try to avoid
